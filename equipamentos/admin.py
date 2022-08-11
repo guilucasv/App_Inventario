@@ -6,6 +6,7 @@ from equipamentos.models import Wyse
 from equipamentos.models import Switch
 from equipamentos.models import Dvr
 from equipamentos.models import Server
+from equipamentos.models import Impressora
 
 class Desktops(admin.ModelAdmin):
     list_display = ('HostName', 'Modelo_do_Equipamento', 'Setor_do_Equipamento', 'HD', 'IP_Adress', 'Mac_Address', 'Patrimônio', 'Service_Tag', 'Usuario')
@@ -38,6 +39,13 @@ class Servidores(admin.ModelAdmin):
     list_display_links = ('IP_Address', 'Memoria', 'HD')
     search_fields = ('Service_Tag', 'Patrimonio', 'IP_Address', 'Setor_do_Equipamento',)
 
+class Impressoras(admin.ModelAdmin):
+    list_display = ('Setor_do_Equipamento', 'IP_Address', 'HostName', 'Modelo_do_Equipamento', 'Setor_do_Equipamento', 'Numero_Serie')
+    list_display_links = ('IP_Address', 'Setor_do_Equipamento', 'HostName')
+    search_fields = ('HostName', 'IP_Address',)
+
+
+
 
 admin.site.register(Notebook, Notebooks)
 admin.site.register(Desktop, Desktops)
@@ -45,3 +53,4 @@ admin.site.register(Wyse, Wyses)
 admin.site.register(Switch, Switches)
 admin.site.register(Dvr, Dvrs)
 admin.site.register(Server, Servidores)
+admin.site.register(Impressora, Impressoras)
