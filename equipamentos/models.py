@@ -469,24 +469,23 @@ class Impressora(models.Model):
     Numero_Serie = models.CharField(max_length=50, verbose_name="Número de série da Impressora")
 
 
-    class Notebook_Automacao(models.Model):
-
-        MODELOS = (
-            ('MODEL', 'MODELO DO EQUIPAMENTO'),
-            ('E6430', 'LATITUDE E6430'),
-            ('3420', 'LATITUDE 3420'),
-            ('330-15IKB', 'IDEAPAD 330-15IKB'),
-            ('3468', 'VOSTRO 14 3468'),
-            ('A315-53-3470', 'ASPIRE 3 A315-53-3470'),
-            ('5480', 'LATITUDE 5480'),
-            ('VT5480', 'VOSTRO 5480'),
-            ('HPG7', 'HP 240 G7'),
-            ('3470', 'LATITUDE 3470'),
-            ('VT5481', 'VOSTRO 5481'),
-            ('3400', 'LATITUDE 3400'),
-            ('LTE6430', 'LATITUDE E6430'),
-            ('IPD3470', 'IDEAPAD 330-3470'),
-        )
+class Notebook_Automacao(models.Model):
+    MODELOS = (
+        ('MODEL', 'MODELO DO EQUIPAMENTO'),
+        ('E6430', 'LATITUDE E6430'),
+        ('3420', 'LATITUDE 3420'),
+        ('330-15IKB', 'IDEAPAD 330-15IKB'),
+        ('3468', 'VOSTRO 14 3468'),
+        ('A315-53-3470', 'ASPIRE 3 A315-53-3470'),
+        ('5480', 'LATITUDE 5480'),
+        ('VT5480', 'VOSTRO 5480'),
+        ('HPG7', 'HP 240 G7'),
+        ('3470', 'LATITUDE 3470'),
+        ('VT5481', 'VOSTRO 5481'),
+        ('3400', 'LATITUDE 3400'),
+        ('LTE6430', 'LATITUDE E6430'),
+        ('IPD3470', 'IDEAPAD 330-3470'),
+    )
 
     SETORES = (
        ('ESC', 'ESCOLHA UM SETOR'),
@@ -548,7 +547,6 @@ class Impressora(models.Model):
     Modelo_do_Equipamento = models.CharField(max_length=20, choices=MODELOS, blank=False, null=False, default='MODEL')
     Usuario = models.CharField(max_length=50, null=True)
     Licenca = models.CharField(max_length=50, choices=OFFICE, blank=False, null=False, default='LVL')
-    Funcao = models.CharField(max_length=50)
     Setor_do_Equipamento = models.CharField(max_length=20, choices=SETORES, null=False, default='ESC')
     Service_Tag = models.CharField(max_length=50, verbose_name="Service Tag do Notebook")
     Mac_Address = models.CharField(max_length=50, verbose_name="Endereço MAC do Notebook")
