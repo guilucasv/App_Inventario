@@ -469,7 +469,7 @@ class Impressora(models.Model):
     Numero_Serie = models.CharField(max_length=50, verbose_name="Número de série da Impressora")
 
 
-class Notebook_Automacao(models.Model):
+class NotebooksDeAutomacoe(models.Model):
     MODELOS = (
         ('MODEL', 'MODELO DO EQUIPAMENTO'),
         ('E6430', 'LATITUDE E6430'),

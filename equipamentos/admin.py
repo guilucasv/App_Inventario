@@ -1,12 +1,7 @@
 # -- Importação dos MODELS para o painel de ADMIN -- #
 from django.contrib import admin
-from equipamentos.models import Desktop
-from equipamentos.models import Notebook
-from equipamentos.models import Wyse
-from equipamentos.models import Switch
-from equipamentos.models import Dvr
-from equipamentos.models import Server
-from equipamentos.models import Impressora
+from equipamentos.models import Desktop, Notebook, Wyse, Switch, Dvr, Server, Impressora, NotebooksDeAutomacoe
+
 
 class Desktops(admin.ModelAdmin):
     list_display = ('HostName', 'Modelo_do_Equipamento', 'Setor_do_Equipamento', 'HD', 'IP_Adress', 'Mac_Address', 'Patrimônio', 'Service_Tag', 'Usuario')
@@ -45,7 +40,10 @@ class Impressoras(admin.ModelAdmin):
     search_fields = ('HostName', 'IP_Address',)
 
 
-
+class Notebooks_de_Automacao(admin.ModelAdmin):
+    list_display = ('HostName', 'Usuario', 'Setor_do_Equipamento', 'HD', 'IP_Adress', 'Mac_Address', 'Patrimônio', 'Service_Tag', 'Usuario')
+    list_display_links = ('Usuario', 'Setor_do_Equipamento', 'IP_Adress', 'HD', 'Mac_Address', 'Patrimônio', 'Service_Tag')
+    search_fields = ('HostName', 'IP_Adress', 'Mac_Address',)
 
 admin.site.register(Notebook, Notebooks)
 admin.site.register(Desktop, Desktops)
@@ -54,3 +52,4 @@ admin.site.register(Switch, Switches)
 admin.site.register(Dvr, Dvrs)
 admin.site.register(Server, Servidores)
 admin.site.register(Impressora, Impressoras)
+admin.site.register(NotebooksDeAutomacoe, Notebooks_de_Automacao)
