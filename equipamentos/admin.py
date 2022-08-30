@@ -1,8 +1,6 @@
 # -- Importação dos MODELS para o painel de ADMIN -- #
 from django.contrib import admin
-from equipamentos.models import Desktop, Notebook, Wyse, Switch, Dvr, Server, Impressora, NotebooksDeAutomacoe
-
-
+from equipamentos.models import *
 class Desktops(admin.ModelAdmin):
     list_display = ('HostName', 'Modelo_do_Equipamento', 'Setor_do_Equipamento', 'HD', 'IP_Adress', 'Mac_Address', 'Patrimônio', 'Service_Tag', 'Usuario')
     list_display_links = ('Usuario', 'Modelo_do_Equipamento', 'Setor_do_Equipamento', 'IP_Adress', 'HD', 'Mac_Address', 'Patrimônio', 'Service_Tag')
